@@ -6,7 +6,19 @@
     <title>AI Test</title>
 </head>
 <body>
-    <button>Gerar Curiosidade Aleatória</button>
+    <button id="generate">Gerar Curiosidade Aleatória</button>
     <div id="result"></div>
+    <script>
+        let generateButton = document.querySelector("button#generate")
+        let result = document.querySelector("div#result")
+
+        generateButton.addEventListener("click", () => {
+            fetch("/api/gemini.js", {
+                method: "POST",
+                body: JSON.stringify({message: "Me diga uma curiosidade aleatória!"})
+            })
+            //.then()
+        })
+    </script>
 </body>
 </html>
