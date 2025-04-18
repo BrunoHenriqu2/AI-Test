@@ -28,6 +28,6 @@
     "test": ""
   },
   "dependencies": {
-    "gemini-ai": "^2.2.1"
+    "@google/generative-ai": "^0.24.0"
   }
 }
