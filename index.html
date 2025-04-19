@@ -48,7 +48,7 @@
             .then(response => response.json())
             .then(data => {
                 const {responseMessage} = data
-                result.innerHTML = `<h2>responseMessage</h2>`
+                result.innerHTML = `<h2>${responseMessage}</h2>`
             })
         })
     </script>
