@@ -20,22 +20,20 @@
             text-align: center;
         }
 
-        div {
+        h2 {
             font-size: 2rem;
             font-family: "Courier New", Courier, monospace;
         }
 
         button {
-            height: 15%;
-            width: 15%;
+            height: 20%;
+            width: 20%;
         }
     </style>
 </head>
 <body>
     <h1>Teste de AI! (Gemini)</h1>
     <button id="generate">Gerar Curiosidade Aleatória</button>
-    <br>
-    <br>
     <div id="result"></div>
     <script>
         let generateButton = document.querySelector("button#generate")
@@ -50,7 +48,7 @@
             .then(response => response.json())
             .then(data => {
                 const {responseMessage} = data
-                result.innerHTML = responseMessage
+                result.innerHTML = `<h2>responseMessage</h2>
             })
         })
     </script>
