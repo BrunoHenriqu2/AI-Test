@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Test</title>
     <style>
+
+        body {
+            display: flexbox;
+            align-items: center;
+            justify-content: center;
+        }
+
         h1 {
             font-family: cursive;
-            font-size: large;
+            font-size: 10rem;
             letter-spacing: 5px;
             text-align: center;
+        }
+
+        div {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 10rem;
         }
     </style>
 </head>
@@ -27,7 +39,10 @@
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({message: "Me diga uma curiosidade aleatória!"})
             })
-            //.then()
+            .then(response => response.json())
+            .then(data => {
+                result.innerHTML = data
+            })
         })
     </script>
 </body>
