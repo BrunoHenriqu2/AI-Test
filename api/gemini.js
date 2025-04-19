@@ -10,7 +10,7 @@ export default async function generateGemini(req, res) {
     }
     
     const {message} = req.body
-    const prompt = `${String(message)} (resuma o máximo possível e faça questão da resposta estar em PT-BR)`;
+    const prompt = `${String(message)} (Se for possível resuma o máximo que puder. Também faça questão da resposta estar em PT-BR)`;
     console.log(message, prompt)
     try {
         const generativeRes = await model.generateContent([prompt]);
