@@ -9,8 +9,9 @@ export default async function generateGemini(req, res) {
         return res.status(405).json({ error: "Metodo não permitido: " + req.method });
     }
     
-    const prompt = `${req.body.message} (resuma o máximo possível e faça questão da resposta estar em PT-BR)`;
-    console.log(prompt)
+    const {message} = req.body
+    const prompt = `${message} (resuma o máximo possível e faça questão da resposta estar em PT-BR)`;
+    console.log(message)
     try {
         const generativeRes = await model.generateContent([prompt]);
         console.log(res.response.text())
