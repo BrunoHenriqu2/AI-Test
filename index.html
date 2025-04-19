@@ -13,8 +13,9 @@
         let result = document.querySelector("div#result")
 
         generateButton.addEventListener("click", () => {
-            fetch("/api/gemini.js", {
+            fetch("/api/gemini", {
                 method: "POST",
+                headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({message: "Me diga uma curiosidade aleatória!"})
             })
             //.then()
