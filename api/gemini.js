@@ -14,7 +14,7 @@ export default async function generateGemini(req, res) {
     console.log(message, prompt)
     try {
         const generativeRes = await model.generateContent([prompt]);
-        console.log(res.response.text())
+        console.log(generativeRes.response.text())
         return res.json({responseMessage: generativeRes.response.text()});
     } catch (erro) {
         console.error("Erro ao obter texto: ", erro.message, erro);
